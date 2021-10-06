@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const noteRouter = require('./routes/notes')
 const app = express()
 
 //Middleware
@@ -16,6 +17,8 @@ app.get('/', (req,res) => {
     res.send('Prueba');
 });
 
+
+app.use("/api", noteRouter)
 
 //Servidor
 app.listen(5000, () => {
